@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.sud.videotrimmer.DeepVideoTrimmer;
+import com.sud.videotrimmer.SudVideoTrimmer;
 import com.sud.videotrimmer.interfaces.OnTrimVideoListener;
 import com.sud.videotrimmer.view.RangeSeekBarView;
 import com.sud.videotrimmerexample.databinding.ActivityVideoTrimmerBinding;
@@ -16,7 +16,7 @@ import static com.sud.videotrimmerexample.Constants.EXTRA_VIDEO_PATH;
 
 public class VideoTrimmerActivity extends BaseActivity implements OnTrimVideoListener {
     ActivityVideoTrimmerBinding mBinder;
-    private DeepVideoTrimmer mVideoTrimmer;
+    private SudVideoTrimmer mVideoTrimmer;
     TextView textSize, tvCroppingMessage;
     RangeSeekBarView timeLineBar;
 
@@ -32,7 +32,7 @@ public class VideoTrimmerActivity extends BaseActivity implements OnTrimVideoLis
             path = extraIntent.getStringExtra(EXTRA_VIDEO_PATH);
         }
 
-        mVideoTrimmer = ((DeepVideoTrimmer) findViewById(R.id.timeLine));
+        mVideoTrimmer = ((SudVideoTrimmer) findViewById(R.id.timeLine));
         timeLineBar = (RangeSeekBarView) findViewById(R.id.timeLineBar);
         textSize = (TextView) findViewById(R.id.textSize);
         tvCroppingMessage = (TextView) findViewById(R.id.tvCroppingMessage);

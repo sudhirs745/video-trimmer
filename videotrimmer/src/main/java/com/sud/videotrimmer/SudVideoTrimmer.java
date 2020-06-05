@@ -40,10 +40,10 @@ import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
 
-public class DeepVideoTrimmer extends FrameLayout implements MediaPlayer.OnErrorListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener,
+public class SudVideoTrimmer extends FrameLayout implements MediaPlayer.OnErrorListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener,
         SeekBar.OnSeekBarChangeListener, OnRangeSeekBarListener, OnProgressVideoListener {
 
-    private static final String TAG = DeepVideoTrimmer.class.getSimpleName();
+    private static final String TAG = SudVideoTrimmer.class.getSimpleName();
     private static final int MIN_TIME_FRAME = 1000;
 
     private SeekBar mHolderTopView;
@@ -108,11 +108,11 @@ public class DeepVideoTrimmer extends FrameLayout implements MediaPlayer.OnError
         }
     };
 
-    public DeepVideoTrimmer(@NonNull Context context, AttributeSet attrs) {
+    public SudVideoTrimmer(@NonNull Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public DeepVideoTrimmer(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
+    public SudVideoTrimmer(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -486,15 +486,15 @@ public class DeepVideoTrimmer extends FrameLayout implements MediaPlayer.OnError
     private static class MessageHandler extends Handler {
 
         @NonNull
-        private final WeakReference<DeepVideoTrimmer> mView;
+        private final WeakReference<SudVideoTrimmer> mView;
 
-        MessageHandler(DeepVideoTrimmer view) {
+        MessageHandler(SudVideoTrimmer view) {
             mView = new WeakReference<>(view);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            DeepVideoTrimmer view = mView.get();
+            SudVideoTrimmer view = mView.get();
             if (view == null || view.mVideoView == null) {
                 return;
             }
